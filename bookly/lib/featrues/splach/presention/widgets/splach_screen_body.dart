@@ -27,6 +27,13 @@ class _SplachScreenBodyState extends State<SplachScreenBody>
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -41,4 +48,3 @@ class _SplachScreenBodyState extends State<SplachScreenBody>
     );
   }
 }
-
