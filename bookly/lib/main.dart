@@ -1,6 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly/featrues/splach/presention/splach_screen.dart';
+import 'package:bookly/featrues/splach/presentation/splach_screen.dart';
 
 void main() {
   runApp(
