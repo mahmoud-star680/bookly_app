@@ -1,3 +1,3 @@
 class AssetData {
-  static const logo = 'bookly/assets/images/Logo.png';
+  static const logo = 'assets/images/Logo.png';
 }

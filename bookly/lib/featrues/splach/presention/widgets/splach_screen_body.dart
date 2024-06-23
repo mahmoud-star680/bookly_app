@@ -21,14 +21,14 @@ class _SplachScreenBodyState extends State<SplachScreenBody>
       vsync: this,
       duration: const Duration(seconds: 3),
     );
-    slidingAnimation = Tween<Offset>(begin: Offset(0, 2), end: Offset.zero)
-        .animate(animationController);
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
     animationController.forward();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     animationController.dispose();
   }
