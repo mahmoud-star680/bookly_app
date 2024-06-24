@@ -15,9 +15,7 @@ class HomeAppBar extends StatelessWidget {
             AssetData.logo,
             height: 18,
           ),
-          const SizedBox(
-            width: 50,
-          ),
+          const Spacer(),
           IconButton(
               onPressed: () {},
               icon: const Icon(
