@@ -8,11 +8,11 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        HomeAppBar(),
-        FeatruedListView(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        children: [HomeAppBar(), FeatruedListView(), Text('Best Seller')],
+      ),
     );
   }
 }
