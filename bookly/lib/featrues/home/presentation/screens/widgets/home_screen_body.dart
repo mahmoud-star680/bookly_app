@@ -11,7 +11,15 @@ class HomeScreenBody extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.all(8.0),
       child: Column(
-        children: [HomeAppBar(), FeatruedListView(), Text('Best Seller')],
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          HomeAppBar(),
+          FeatruedListView(),
+          SizedBox(
+            height: 50,
+          ),
+          Text('Best Seller')
+        ],
       ),
     );
   }
