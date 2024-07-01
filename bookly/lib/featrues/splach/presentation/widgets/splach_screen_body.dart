@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/core/utils/app_routter.dart';
 import 'package:bookly/featrues/home/presentation/screens/home_screen.dart';
 import 'package:bookly/featrues/splach/presentation/widgets/sliding_text.dart';
 
@@ -24,18 +26,8 @@ class _SplachScreenBodyState extends State<SplachScreenBody>
   }
 
   void navigateToHome() {
-    Timer(const Duration(seconds: 2), () {
-      // Navigate to HomeScreen with fade animation
-      Navigator.pushReplacement(
-        context,
-        PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) =>
-              FadeTransition(
-            opacity: animation,
-            child: const HomeScreen(),
-          ),
-        ),
-      );
+    Future.delayed(const Duration(seconds: 3), () {
+      GoRouter.of(context).push(AppRouter.kHomeScreen);
     });
   }
 

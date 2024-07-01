@@ -1,5 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bookly/core/utils/app_routter.dart';
 import 'package:bookly/featrues/splach/presentation/splach_screen.dart';
 
 void main() {
@@ -13,10 +14,10 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor),
-      home: const SplachScreen(),
     );
   }
 }
