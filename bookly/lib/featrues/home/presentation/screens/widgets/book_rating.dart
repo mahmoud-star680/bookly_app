@@ -3,11 +3,13 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
+  const BookRating({super.key, this.mainAxisAlignment});
+  final MainAxisAlignment? mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Icon(
           FontAwesomeIcons.solidStar,
