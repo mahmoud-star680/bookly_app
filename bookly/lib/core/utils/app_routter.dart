@@ -6,7 +6,7 @@ import 'package:bookly/featrues/home/presentation/screens/book_details_screen.da
 
 abstract class AppRouter {
   static const kHomeScreen = '/HomeScreen';
-  static const kBookDetailsScreen = 'BookDetailsScreen/';
+  static const kBookDetailsScreen = '/BookDetailsScreen';
   static final router = GoRouter(
     routes: <GoRoute>[
       GoRoute(
@@ -21,7 +21,6 @@ abstract class AppRouter {
           return const HomeScreen();
         },
       ),
-
       GoRoute(
         path: kBookDetailsScreen,
         builder: (BuildContext context, GoRouterState state) {
