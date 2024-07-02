@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/core/utils/app_routter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -17,7 +19,9 @@ class HomeAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kSearchScreen);
+              },
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,
                 size: 24,
