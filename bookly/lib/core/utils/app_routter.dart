@@ -29,7 +29,6 @@ abstract class AppRouter {
           return const BookDetailsScreen();
         },
       ),
-
       GoRoute(
         path: kSearchScreen,
         builder: (BuildContext context, GoRouterState state) {

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/styles.dart';
 
-
-
 class ActionsButton extends StatelessWidget {
   const ActionsButton({
     super.key,
