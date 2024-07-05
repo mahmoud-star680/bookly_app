@@ -1,8 +1,11 @@
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/app_routter.dart';
+import 'package:bookly/core/di/dependency_injection.dart';
+// Import the DI setup file
 
 void main() {
+  setupServiceLocator(); // Initialize the service locator
   runApp(
     const BooklyApp(),
   );
