@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:bookly/core/errors/failures.dart';
 import 'package:bookly/featrues/home/data/repos/home_repo.dart';
 import 'package:bookly/featrues/home/data/Models/BookModel/book_model.dart';
 

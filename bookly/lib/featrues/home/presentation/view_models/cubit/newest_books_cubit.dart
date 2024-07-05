@@ -5,4 +5,16 @@ import 'package:bookly/featrues/home/presentation/view_models/cubit/newest_books
 class NewestBooksCubit extends Cubit<NewsetBooksState> {
   NewestBooksCubit(this.homeRepo) : super(NewsetBooksInitial());
   final HomeRepo homeRepo;
+
+  Future<void> fetchNewestBooks() async {
+    emit(NewsetBooksLoading());
+
+    var result = await homeRepo.fetchNewestBooks();
+
+    result.fold((Failure) {
+      emit(NewsetBooksFailure(Failure.errMessage));
+    }, (books) {
+      emit(NewsetBooksSuccess(books));
+    });
+  }
 }
