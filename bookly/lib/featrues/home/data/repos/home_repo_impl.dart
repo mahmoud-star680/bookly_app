@@ -36,8 +36,12 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeatruedBooks() async {
     try {
       var data = await apiService.get(
-        endPoint: 'volumes?q=subject:Featured&Filtering=free-ebooks',
+        endPoint: 'volumes?q=subject:Fiction&Filtering=free-ebooks',
       );
+
+      if (data == null || data['items'] == null) {
+        return left(ServerFailure('No data or items in the response'));
+      }
 
       List<BookModel> books = [];
 
@@ -50,7 +54,6 @@ class HomeRepoImpl implements HomeRepo {
         return left(ServerFailure.fromDioError(e));
       }
       return left(ServerFailure(e.toString()));
-      // Handle error
     }
   }
 }

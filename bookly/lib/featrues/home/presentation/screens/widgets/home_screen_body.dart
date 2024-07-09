@@ -3,9 +3,9 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookly/core/di/dependency_injection.dart';
 import 'package:bookly/featrues/home/presentation/screens/widgets/home_app_bar.dart';
+import 'package:bookly/featrues/home/presentation/screens/widgets/newest_list_view.dart';
 import 'package:bookly/featrues/home/presentation/screens/widgets/featrued_list_view.dart';
 import 'package:bookly/featrues/home/presentation/view_models/cubit/newest_books_cubit.dart';
-import 'package:bookly/featrues/home/presentation/screens/widgets/best_seller_list_view.dart';
 import 'package:bookly/featrues/home/presentation/view_models/featrued_books_cubit/featured_books_cubit.dart';
 
 class HomeScreenBody extends StatelessWidget {
@@ -26,7 +26,7 @@ class HomeScreenBody extends StatelessWidget {
               BlocProvider(
                 create: (context) =>
                     getIt<FeaturedBooksCubit>()..fetchFeatruedBooks(),
-                child: const FeatruedListView(),
+                child: const FeaturedBooksListView(),
               ),
               const SizedBox(
                 height: 50,
@@ -50,7 +50,7 @@ class HomeScreenBody extends StatelessWidget {
             child: BlocProvider(
               create: (context) =>
                   getIt<NewestBooksCubit>()..fetchNewestBooks(),
-              child: const BestSellerListView(),
+              child: const NewestListView(),
             ),
           ),
         )

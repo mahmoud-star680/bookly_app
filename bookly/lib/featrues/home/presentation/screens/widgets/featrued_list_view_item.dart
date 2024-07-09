@@ -1,11 +1,11 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/app_routter.dart';
+// Ensure correct import
 
-class FeatruedListViewItem extends StatelessWidget {
-  const FeatruedListViewItem({super.key});
+class FeaturedListViewItem extends StatelessWidget {
+  const FeaturedListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +15,33 @@ class FeatruedListViewItem extends StatelessWidget {
       },
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.cyan,
-              image: const DecorationImage(
-                  image: AssetImage(AssetData.testImage))),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[300], // Placeholder color
+                  image: const DecorationImage(
+                    image: AssetImage(
+                        AssetData.testImage), // Replace with actual image asset
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.kBookDetailsScreen);
+                    },
+                    splashColor: Colors.white.withOpacity(0.3),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
