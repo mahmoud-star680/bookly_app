@@ -4,11 +4,10 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/featrues/home/data/Models/BookModel/book_model.dart';
 import 'package:bookly/featrues/home/presentation/screens/widgets/book_rating.dart';
 
-
 class NewestListViewItem extends StatelessWidget {
   final BookModel book;
 
-  const NewestListViewItem({required this.book, Key? key}) : super(key: key);
+  const NewestListViewItem({required this.book, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +21,11 @@ class NewestListViewItem extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.cyan,
-                image: book.volumeInfo?.imageLinks?.thumbnail != null
+                image: book.volumeInfo.imageLinks?.thumbnail != null
                     ? DecorationImage(
                         fit: BoxFit.fill,
-                        image: NetworkImage(book.volumeInfo!.imageLinks!.thumbnail!),
+                        image: NetworkImage(
+                            book.volumeInfo.imageLinks!.thumbnail!),
                       )
                     : null,
               ),
@@ -38,14 +38,14 @@ class NewestListViewItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                book.volumeInfo?.title ?? 'No Title',
+                book.volumeInfo.title ?? 'No Title',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
               ),
               const SizedBox(height: 3),
               Text(
-                book.volumeInfo?.authors?.join(', ') ?? 'Unknown Author',
+                book.volumeInfo.authors?.join(', ') ?? 'Unknown Author',
                 style: Styles.textStyle14,
               ),
               const SizedBox(height: 3),
@@ -53,11 +53,16 @@ class NewestListViewItem extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      '\$${book.saleInfo?.saleability ?? "N/A"}',
-                      style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
+                      'Free',
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  const BookRating(),
+                  BookRating(
+                    rating: book.volumeInfo.averageRating?.round() ?? 0,
+                    count: book.volumeInfo.ratingsCount ?? 0,
+                  ),
                 ],
               ),
             ],
