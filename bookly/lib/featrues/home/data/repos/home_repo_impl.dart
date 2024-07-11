@@ -39,9 +39,28 @@ class HomeRepoImpl implements HomeRepo {
         endPoint: 'volumes?q=subject:Fiction&Filtering=free-ebooks',
       );
 
-      if (data == null || data['items'] == null) {
-        return left(ServerFailure('No data or items in the response'));
+      List<BookModel> books = [];
+
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
       }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      var data = await apiService.get(
+        endPoint:
+            'volumes?q=subject:Fiction&Filtering=free-ebooks&sorting=relevance',
+      );
 
       List<BookModel> books = [];
 

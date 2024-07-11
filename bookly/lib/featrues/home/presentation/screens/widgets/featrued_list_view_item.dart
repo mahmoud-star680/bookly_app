@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/app_routter.dart';
+import 'package:bookly/featrues/home/data/Models/BookModel/book_model.dart';
 // Ensure correct import
 
 class FeaturedListViewItem extends StatelessWidget {
@@ -11,7 +12,8 @@ class FeaturedListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsScreen);
+        GoRouter.of(context).go(AppRouter.kBookDetailsScreen,
+        extra: BookModel);
       },
       child: AspectRatio(
         aspectRatio: 2.7 / 4,

@@ -5,7 +5,7 @@ import 'package:bookly/core/di/dependency_injection.dart';
 import 'package:bookly/featrues/home/presentation/screens/widgets/home_app_bar.dart';
 import 'package:bookly/featrues/home/presentation/screens/widgets/newest_list_view.dart';
 import 'package:bookly/featrues/home/presentation/screens/widgets/featrued_list_view.dart';
-import 'package:bookly/featrues/home/presentation/view_models/cubit/newest_books_cubit.dart';
+import 'package:bookly/featrues/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/featrues/home/presentation/view_models/featrued_books_cubit/featured_books_cubit.dart';
 
 class HomeScreenBody extends StatelessWidget {

@@ -7,7 +7,7 @@ import 'package:bookly/featrues/home/presentation/screens/widgets/custom_book_im
 import 'package:bookly/featrues/home/presentation/view_models/featrued_books_cubit/featured_books_cubit.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({Key? key}) : super(key: key);
+  const FeaturedBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class FeaturedBooksListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

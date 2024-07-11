@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookly/core/widgets/error_widget.dart'; // Ensure correct import path
-import 'package:bookly/featrues/home/presentation/view_models/cubit/newest_books_state.dart';
-import 'package:bookly/featrues/home/presentation/view_models/cubit/newest_books_cubit.dart';
 import 'package:bookly/featrues/home/presentation/screens/widgets/newst_list_view_item.dart';
+import 'package:bookly/featrues/home/presentation/view_models/newest_books_cubit/newest_books_state.dart';
+import 'package:bookly/featrues/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 
 class NewestListView extends StatelessWidget {
   const NewestListView({super.key});
