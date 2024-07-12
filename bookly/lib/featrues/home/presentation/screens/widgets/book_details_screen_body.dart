@@ -20,7 +20,9 @@ class BookDetailsScreenBody extends StatelessWidget {
             child: Column(
               children: [
                 const SafeArea(child: BokkDetailsAppBar()),
-                const BookDetailsSction(),
+                BookDetailsSction(
+                  bookModel: bookModel,
+                ),
                 const Expanded(
                   child: SizedBox(
                     height: 50,

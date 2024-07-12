@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:bookly/core/utils/app_routter.dart';
 
 class BokkDetailsAppBar extends StatelessWidget {
   const BokkDetailsAppBar({super.key});
@@ -9,7 +11,9 @@ class BokkDetailsAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
           icon: const Icon(Icons.close),
         ),
         IconButton(

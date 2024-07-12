@@ -14,7 +14,7 @@ class BookPaymentButton extends StatelessWidget {
               child: ActionsButton(
             backgroundColor: Colors.white,
             textColor: Colors.black,
-            text: '19.99',
+            text: 'free',
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12),
               bottomLeft: Radius.circular(12),
